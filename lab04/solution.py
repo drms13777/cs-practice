@@ -27,6 +27,6 @@ def above_average(names, scores):
     return [names[i] for i in range(len(scores)) if scores[i] > ave]
 
 print(f'winner - {winner(names, scores)}')
-print(f'average_score = {average(scores)}')
+print(f'average_score = {average(scores):.2f}')
 print(f'ranking - {ranking(names, scores)}')
 print(f'above_average - {above_average(names, scores)}')
