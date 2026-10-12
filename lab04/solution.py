@@ -16,10 +16,10 @@ def average(scores):
     sum_scores = 0
     for i in range(0, len(scores)):
         sum_scores += scores[i]
-    return sum_scores / len(scores)
+    return round(sum_scores / len(scores), 2)
 
 def ranking(names, scores):
-    sort_scr = sorted(zip(names, scores), key=lambda x: x[1], reverse=True)
+    sort_scr = sorted(zip(names, scores), key=lambda x: (-x[1], x[0]))
     return [name for name, score in sort_scr]
 
 def above_average(names, scores):
@@ -27,6 +27,6 @@ def above_average(names, scores):
     return [names[i] for i in range(len(scores)) if scores[i] > ave]
 
 print(f'winner - {winner(names, scores)}')
-print(f'average_score = {average(scores):.2f}')
+print(f'average_score = {average(scores)}')
 print(f'ranking - {ranking(names, scores)}')
 print(f'above_average - {above_average(names, scores)}')
