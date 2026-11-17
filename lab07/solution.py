@@ -3,7 +3,7 @@ def reshape_rows(values: list[float | int], width: int) -> list[list[float | int
     if width <= 0 or len(values) % width != 0:
         return []
     a = np.asarray(values, dtype=float)
-    a = np.reshape(-1, width)
+    a = a.reshape(-1, width)
     return a.tolist()
 def block(matrix: list[list[float]], rows: list[int], columns: list[int]) -> list[list[float]]:
     a = np.asarray(matrix, dtype=float)
@@ -20,6 +20,6 @@ def column_means(matrix:list[list[float]]) -> list[float]:
 def column_range(matrix: [list[list[float]]], column: int) -> float :
     a = np.asarray(matrix, dtype=float)
     if a.size == 0 :
-        return []
+        return 0.0
     values = a[:, column]
     return round(float(values.max() - values.min()), 6)
