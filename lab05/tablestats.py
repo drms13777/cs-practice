@@ -28,6 +28,8 @@ def count_types(rows):
     for row in rows:
         kind = row.get('тип')
         if kind is not None:
+
+            counts[kind] = count[kind] + 1
             counts[kind] = counts.get(kind, 0) + 1
     return counts
 def total_minutes(rows, kind):
